@@ -2,20 +2,18 @@
 #include <ncurses.h>
 #include <unistd.h>
 
-void	display_win(t_game game, t_info info)
-{
+void	display_game(t_game game)
+{	
 	//clear();
-	wclear(game.win);
+	werase(game.win);
 	wborder(game.win, '|', '|', '_', '_', '/', '\\', '\\', '/');
-	//mvprintw(0, 0, "Remaning lives : %d\tElapsed time : %ld:%ld\tCurrent score : %d",
-            //*info.ptr_player_lives, info.time.tv_sec / 60, info.time.tv_sec % 60, info.score);
 	mvprintw(game.player.row, game.player.col, "%c", game.player.ch);
 	ft_lstiter_display(game.enemies);
 	ft_lstiter_display(game.p_shots);
 	ft_lstiter_display(game.e_shots);
 	//touchwin(stdscr);
 	//refresh();
-	wrefresh(game.win);
+	//wrefresh(game.win);
 	return ;
 }
 
@@ -34,9 +32,11 @@ void	init_enemies(t_entitylist **enemies)
 
 int main(void)
 {
-    t_game game = {0};
-	t_info info = {0};
-	int	c = 0;
+    int		ret;
+	t_game	game = {0};
+	t_info	info = {0};
+	struct timeval	curtime;
+	int		c = 0;
 
 	initscr();
 	curs_set(0);
@@ -44,18 +44,32 @@ int main(void)
 	game.win = subwin(stdscr, LINES - (WIN_WIDTH - 1) * 2, COLS - (WIN_WIDTH - 1) * 2, 2, 2);
 	keypad(game.win, TRUE);
 	keypad(stdscr, TRUE);
-	//halfdelay(10);
 	nodelay(stdscr, true);
+	nodelay(game.win, true);
 	init_enemies(&game.enemies);
 	init_player(&game.player);
 	noecho();
-	display_win(game, info);
+	ret = init_info(&info, &game);
+	if (ret != SUCCESS)
+		return (ret);
+	curtime = info.t_zero;
+	display_game(game);
+	display_info(info, &game.frame_time);
 	while ((c = getch()) != KEY_F(1))
 	{
+		ret = gettimeofday(&game.frame_time, NULL);
+		if (ret != 0)
+			return (ERROR_SYSCALL);
 		update_player(c, &game);
-		display_win(game, info);
-		usleep(100000000 / 60);
+		display_game(game);
+		ret = display_info(info, &curtime);
+		if (ret != SUCCESS)
+			break ;
+		wait_next_frame(&game.frame_time, curtime);
+		refresh();
+		wrefresh(game.win);
+		++game.f_counter;
 	}
 	endwin();
-	return (0);
+	return (ret);
 }	
