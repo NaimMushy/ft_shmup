@@ -1,7 +1,8 @@
 #ifndef FT_SCHMUP_H
 # define FT_SCHMUP_H
 
-# define MAX_ENEMY 300
+# define WIN_WIDTH 3
+# define MAP_LIMIT LINES / 2
 
 #include <ncurses.h>
 #include <time.h>
@@ -29,7 +30,7 @@ typedef struct s_info
 
 typedef struct s_game
 {
-    WINDOW  *next_win;
+    WINDOW  *win;
     timeval frame;
     int f_counter;
     t_entity player;
@@ -38,4 +39,11 @@ typedef struct s_game
     t_listentity p_shots;
 }   t_game;
 
+
+void	init_player(t_game *game);
+void	update_player(char input, t_game *game);
+void	ft_lstiter(t_entitylist *lst, void	(*f)())
+void	ft_lstdelone(t_entitylist *lst, void (*del)(void *))
+void	ft_lstadd_front(t_entitylist **lst, t_entitylist *new)
+t_entitylist	*ft_lstnew(int row, int col)
 #endif

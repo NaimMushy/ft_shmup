@@ -7,7 +7,10 @@ LIBRARY := -lncurses
 
 INCLUDES := -I .
 
-C_FILES := main.c
+C_FILES := \
+	main.c \
+	player.c \
+	manage_lst.c
 
 OBJ_DIR := .obj/
 OBJ_FILES := $(addprefix $(OBJ_DIR), $(C_FILES:.c=.o))

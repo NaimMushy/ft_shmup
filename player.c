@@ -8,14 +8,14 @@ void	init_player(t_game *game)
 	game->player.ch = 'P';
 }
 
-void	update_player(char input)
+void	update_player(char input, t_game *game)
 {
-	t_game	game = {0};
+	t_listentity	*new_shot;
 
     switch (c)
 	{
 		case 'w' :
-			if (row - 1 >= WIN_WIDTH)
+			if (row - 1 >= MAP_LIMIT)
 				game.player.row -= 1;
 			break;
 		case 's' : 
@@ -31,8 +31,12 @@ void	update_player(char input)
 				game.player.col += 1;
 			break;
 		case ' ' :
-			ft_lstadd_front(&game.p_shots, ft_lstnew());
-			init_shot(&game.p.shots);
+			if (row - 1 >= WIN_WIDTH)
+			{
+				new_shot = ft_lstnew(row);
+				ft_lstadd_front(&game.p_shots, new_shot);
+				init_shot(&game.p.shots);
+			}
 	}
 	return (0);
 }
