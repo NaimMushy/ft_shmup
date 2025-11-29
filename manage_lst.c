@@ -6,13 +6,14 @@
 /*   By: ibady <ibady@student.42lyon.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 14:11:21 by ibady             #+#    #+#             */
-/*   Updated: 2025/11/29 18:04:09 by ibady            ###   ########lyon.fr   */
+/*   Updated: 2025/11/29 18:33:19 by ibady            ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_schmup.h"
+#include <stdlib.h>
 
-t_entitylist	*ft_lstnew(int row, int col)
+t_entitylist	*ft_lstnew(int row, int col, int c)
 {
 	t_entitylist	*new;
 
@@ -21,6 +22,7 @@ t_entitylist	*ft_lstnew(int row, int col)
 		return (NULL);
 	new->data.row = row;
 	new->data.col = col;
+	new->data.ch = c;
 	return (new);
 }
 
@@ -30,21 +32,11 @@ void	ft_lstadd_front(t_entitylist **lst, t_entitylist *new)
 	*lst = new;
 }
 
-void	ft_lstdelone(t_entitylist *lst, void (*del)(void *))
+void	ft_lstiter_display(t_entitylist *lst)
 {
-	if (!lst || !del)
-		return ;
-	del(lst->content);
-	free(lst);
-}
-
-void	ft_lstiter(t_entitylist *lst, void	(*f)())
-{
-	if (!f)
-		return ;
 	while (lst)
 	{
-		f(win, lst->row, lst->col, "%c", lst->ch);	
+		mvprintw(lst->data.row, lst->data.col, "%c", lst->data.ch);	
 		lst = lst->next;
 	}
 }
