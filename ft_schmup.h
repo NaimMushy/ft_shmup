@@ -38,6 +38,7 @@ typedef struct s_info
 
 typedef struct s_game
 {
+	WINDOW 	*win;
 	struct timeval	frame;
 	int				f_counter;
 	t_entity		player;
