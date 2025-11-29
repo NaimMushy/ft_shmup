@@ -37,7 +37,6 @@ typedef struct s_info
 
 typedef struct s_game
 {
-	WINDOW			*next_win;
 	struct timeval	frame;
 	int				f_counter;
 	t_entity		player;
