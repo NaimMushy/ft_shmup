@@ -1,7 +1,7 @@
 NAME := ft_shmup
 
 CC := cc
-CFLAGS := -Wall -Wextra -Werror -MMD -MP
+CFLAGS := -MMD -MP
 
 LIBRARY := -lncurses
 

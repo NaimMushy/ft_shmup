@@ -1,42 +1,41 @@
 #include "ft_schmup.h"
 
-void	init_player(t_game *game)
+void	init_player(t_entity *player)
 {
-	game->player.row = LINES - WIN_WIDTH - 1;
-	game->player.col = ((COLS - 1) / 2) - 1;
-	game->player.hp = 3;
-	game->player.ch = 'P';
+	player->row = LINES - WIN_WIDTH - 1;
+	player->col = ((COLS - 1) / 2) - 1;
+	player->hp = 3;
+	player->ch = 'P';
 }
 
-void	update_player(char input, t_game *game)
+void	update_player(int input, t_game *game)
 {
-	t_listentity	*new_shot;
+	t_entitylist	*new_shot;
 
-    switch (c)
+    switch (input)
 	{
 		case 'w' :
-			if (row - 1 >= MAP_LIMIT)
-				game.player.row -= 1;
+			if (game->player.row - 1 >= MAP_LIMIT)
+				game->player.row -= 1;
 			break;
 		case 's' : 
-			if (row + 1 < LINES - WIN_WIDTH)
-				game.player.row += 1;
+			if (game->player.row + 1 < LINES - WIN_WIDTH)
+				game->player.row += 1;
 			break;
 		case 'a' :
-			if (col - 1 >= WIN_WIDTH)
-				game.player.col -= 1;
+			if (game->player.col - 1 >= WIN_WIDTH)
+				game->player.col -= 1;
 			break;
 		case 'd' : 
-			if (col + 1 < COLS - WIN_WIDTH)
-				game.player.col += 1;
+			if (game->player.col + 1 < COLS - WIN_WIDTH)
+				game->player.col += 1;
 			break;
 		case ' ' :
-			if (row - 1 >= WIN_WIDTH)
+			if (game->player.row - 1 >= WIN_WIDTH)
 			{
-				new_shot = ft_lstnew(row);
-				ft_lstadd_front(&game.p_shots, new_shot);
-				init_shot(&game.p.shots);
+				new_shot = ft_lstnew(game->player.row - 1, game->player.col, '*');
+				ft_lstadd_front(&game->p_shots, new_shot);
 			}
 	}
-	return (0);
+	return ;
 }
