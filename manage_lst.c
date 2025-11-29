@@ -13,15 +13,15 @@
 #include "ft_schmup.h"
 #include <stdlib.h>
 
-t_entitylist	*ft_lstnew(int row, int col, int c)
+t_entitylist	*ft_lstnew(int c)
 {
 	t_entitylist	*new;
 
 	new = malloc(sizeof(t_entitylist));
 	if (!new)
 		return (NULL);
-	new->data.row = row;
-	new->data.col = col;
+	new->data.row = 0;
+	new->data.col = 0;
 	new->data.ch = c;
 	return (new);
 }

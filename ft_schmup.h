@@ -45,6 +45,7 @@ typedef struct s_game
 	t_entitylist	*enemies;
 	t_entitylist	*e_shots;
 	t_entitylist	*p_shots;
+	t_entity	map[LINES][COLS];
 }   t_game;
 
 
@@ -52,6 +53,6 @@ void	init_player(t_entity *player);
 void	update_player(int input, t_game *game);
 void	ft_lstiter_display(t_entitylist *lst);
 void	ft_lstadd_front(t_entitylist **lst, t_entitylist *new);
-t_entitylist	*ft_lstnew(int row, int col, int c);
+t_entitylist	*ft_lstnew(int c);
 
 #endif
