@@ -5,7 +5,7 @@ int main(void)
     int ch = 'P';
 	int row, col;
 
-    initscr();
+	initscr();
     keypad(stdscr, TRUE);
     noecho();
 	row = 1;

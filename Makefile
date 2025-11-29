@@ -15,13 +15,18 @@ D_FILES := $(OBJ_FILES:.o=.d)
 
 .PHONY : all clean fclean re
 
+all: $(NAME)
+
 $(NAME): $(OBJ_FILES)
 	$(CC) $(CFLAGS) $^ -o $@ $(LIBRARY)
 
 -include $(D_FILES)
 
-$(OBJ_DIR)%.o : %.c
+$(OBJ_DIR)%.o : %.c | $(OBJ_DIR)
 	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+
+$(OBJ_DIR):
+	mkdir -p $@
 
 clean:
 	rm -rf $(OBJ_DIR)
