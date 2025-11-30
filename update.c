@@ -55,8 +55,6 @@ static int	update_player(int input, t_game *game)
 				check_collision(&new_shot->data, game->player.row - 1, game->player.col, game);
 			}
 	}
-	//if (!game->player.hp)
-	//	game_over(game);
 	return (SUCCESS);
 }
 

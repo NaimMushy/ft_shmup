@@ -31,8 +31,8 @@ int main(void)
 		ret = update_all(input, &game);
 		if (ret != SUCCESS || game.player.hp == 0)
 		{
-			if (ret != SUCCESS)
-				free_all(game);
+			free_all(game);
+			game_over(game);
 			break ;
 		}
 		ret = display_game(game, &curtime);
