@@ -9,10 +9,12 @@ INCLUDES := -I .
 
 C_FILES := \
 	main.c \
-	player.c \
-	manage_lst.c \
-	info.c \
-	frames.c \
+	init.c \
+	creation.c \
+	display.c \
+	update.c \
+	collision.c \
+	frames.c
 
 OBJ_DIR := .obj/
 OBJ_FILES := $(addprefix $(OBJ_DIR), $(C_FILES:.c=.o))
