@@ -47,7 +47,7 @@ static int	check_walls(int type, int row, int col)
 {
 	if (type == 'P' && row <= MAP_LIMIT)
 		return (TRUE);
-	if (row < WIN_WIDTH || row >= LINES - WIN_WIDTH - 1 || col < WIN_WIDTH || col >= COLS - WIN_WIDTH - 1)
+	if (row < WIN_WIDTH || row >= LINES - WIN_WIDTH || col < WIN_WIDTH || col >= COLS - WIN_WIDTH)
 		return (TRUE);
 	return (FALSE);
 }
