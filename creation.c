@@ -9,7 +9,7 @@ int	create_new_eshot(t_entitylist *enemies, t_entitylist **e_shots, t_game *game
 	cursor = enemies;
 	while (cursor)
 	{
-		new_shot = ft_lstnew('|');
+		new_shot = ft_lstnew(ENEMY_SHOT);
 		if (new_shot == NULL)
 			return (ERROR_ALLOC);
 		ft_lstadd_front(e_shots, new_shot);
@@ -29,7 +29,7 @@ int	add_new_wave(t_game *game, int number)
 	pos = (COLS - 1 - (WIN_WIDTH << 1)) / (number << 1);
 	while (number--)
 	{
-		new_enemy = ft_lstnew('V');
+		new_enemy = ft_lstnew(ENEMY);
 		if (new_enemy == NULL)
 			return (ERROR_ALLOC);
 		ft_lstadd_front(&game->enemies, new_enemy);

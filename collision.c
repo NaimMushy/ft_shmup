@@ -15,9 +15,9 @@ void	check_collision(t_entity *entity, int row, int col, t_game *game)
 	{
 		--entity->hp;
 		--other->hp;
-		if (other->ch != 'P' && other->hp <= 0)
+		if (other->ch != PLAYER && other->hp <= 0)
 			destroy_entity(other, game);
-		if (entity->ch != 'P' && entity->hp <= 0)
+		if (entity->ch != PLAYER && entity->hp <= 0)
 			destroy_entity(entity, game);
 		else
 			move_entity(entity, row, col, game);
@@ -25,7 +25,7 @@ void	check_collision(t_entity *entity, int row, int col, t_game *game)
 	}
 	else if (check_walls(entity->ch, row, col) == TRUE)
 	{
-		if (entity->ch != 'P')
+		if (entity->ch != PLAYER)
 			destroy_entity(entity, game);
 		return ;
 	}
@@ -34,18 +34,18 @@ void	check_collision(t_entity *entity, int row, int col, t_game *game)
 
 static t_entitylist	**set_type(t_entity *entity, t_game *game)
 {
-	if (entity->ch == 'V')
+	if (entity->ch == ENEMY)
 		return (&game->enemies);
-	else if (entity->ch == 'o')
+	else if (entity->ch == PLAYER_SHOT)
 		return (&game->p_shots);
-	else if (entity->ch == '|')
+	else if (entity->ch == ENEMY_SHOT)
 		return (&game->e_shots);
 	return (NULL);
 }
 
 static int	check_walls(int type, int row, int col)
 {
-	if (type == 'P' && row <= MAP_LIMIT)
+	if (type == PLAYER && row <= MAP_LIMIT)
 		return (TRUE);
 	if (row < WIN_WIDTH || row >= LINES - WIN_WIDTH || col < WIN_WIDTH || col >= COLS - WIN_WIDTH)
 		return (TRUE);
@@ -58,7 +58,7 @@ static void	destroy_entity(t_entity *entity, t_game *game)
 	t_entitylist	*prev;
 	t_entitylist	*cur;
 	
-	if (entity->ch == 'V')
+	if (entity->ch == ENEMY)
 		game->info.score += 50;
 	head = set_type(entity, game);
 	cur = *head;

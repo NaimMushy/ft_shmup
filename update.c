@@ -48,7 +48,7 @@ static int	update_player(int input, t_game *game)
 		case ' ' :
 			if (game->player.row - 1 >= WIN_WIDTH)
 			{
-				new_shot = ft_lstnew('o');
+				new_shot = ft_lstnew(PLAYER_SHOT);
 				if (new_shot == NULL)
 					return (ERROR_ALLOC);
 				ft_lstadd_front(&game->p_shots, new_shot);

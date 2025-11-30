@@ -12,15 +12,15 @@ int	display_game(t_game game, struct timeval *ptr_curtime)
 		return (ERROR_NCURSES);
 	if (wborder(game.win, '|', '|', '_', '_', '/', '\\', '\\', '/'))
 		return (ERROR_NCURSES);
-	if (mvprintw(game.player.row, game.player.col, "%c", game.player.ch))
+	if (mvwaddch(game.win, game.player.row, game.player.col, game.player.ch))
 		return (ERROR_NCURSES);
-	ret = ft_lstiter_display(game.enemies);
+	ret = ft_lstiter_display(game.enemies, game.win);
 	if (ret != SUCCESS)
 		return (ret);
-	ret = ft_lstiter_display(game.p_shots);
+	ret = ft_lstiter_display(game.p_shots, game.win);
 	if (ret != SUCCESS)
 		return (ret);
-	ret = ft_lstiter_display(game.e_shots);
+	ret = ft_lstiter_display(game.e_shots, game.win);
 	if (ret != SUCCESS)
 		return (ret);
 	ret = display_info(game.info, ptr_curtime);
@@ -29,11 +29,11 @@ int	display_game(t_game game, struct timeval *ptr_curtime)
 	return (SUCCESS);
 }
 
-static int	ft_lstiter_display(t_entitylist *lst)
+static int	ft_lstiter_display(t_entitylist *lst, WINDOW *win)
 {
 	while (lst)
 	{
-		if (mvprintw(lst->data.row, lst->data.col, "%c", lst->data.ch) == ERR)
+		if (mvwaddch(win, lst->data.row, lst->data.col, lst->data.ch) == ERR)
 			return (ERROR_NCURSES);	
 		lst = lst->next;
 	}

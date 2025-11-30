@@ -4,6 +4,10 @@
 # define WIN_WIDTH 3
 # define MAP_LIMIT LINES >> 1
 # define FPS_CAP 60
+# define PLAYER '^'
+# define ENEMY 'v'
+# define PLAYER_SHOT '*'
+# define ENEMY_SHOT '|'
 
 #include <ncurses.h>
 #include <sys/time.h>

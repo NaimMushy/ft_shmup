@@ -33,7 +33,7 @@ static void	init_player(t_game *game, t_entity *player)
 	player->row = LINES - WIN_WIDTH - 1;
 	player->col = ((COLS - 1) >> 1) - 1;
 	player->hp = 3;
-	player->ch = 'P';
+	player->ch = PLAYER;
 	game->map[player->row][player->col] = player;
 }
 
