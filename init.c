@@ -3,8 +3,8 @@
 
 int	init_player(t_entity *player)
 {
-	player->row = N_LINES - WIN_WIDTH - 1;
-	player->col = ((N_COLS - 1) / 2) - 1;
+	player->row = LINES - WIN_WIDTH - 1;
+	player->col = ((COLS - 1) / 2) - 1;
 	player->hp = 3;
 	player->ch = 'P';
 	return (SUCCESS);
@@ -27,18 +27,20 @@ int	init_info(t_info *ptr_info, t_game *ptr_game)
 
 int	init_map(t_game *game)
 {
-	int	index;
+	int	index, index2;
 
-	game->map = malloc(sizeof(t_entity **) * N_LINES);
+	game->map = malloc(sizeof(t_entity **) * LINES);
 	if (!game->map)
 		return (ERROR_ALLOC);
 	index = 0;
-	while (index < N_LINES)
+	while (index < LINES)
 	{
-		game->map[index] = malloc(sizeof(t_entity *) * N_COLS);
+		game->map[index] = malloc(sizeof(t_entity *) * COLS);
 		if (!game->map[index])
 			return (ERROR_ALLOC);
-		game->map[index] = (t_entity **){0};
+		index2 = -1;
+		while (++index2 < COLS)
+			game->map[index][index2] = NULL;
 		index++;
 	}
 	return (SUCCESS);
@@ -48,6 +50,15 @@ int init_all(t_game *game)
 {
 	int	ret;
 
+	initscr();
+	curs_set(0);
+	cbreak();
+	noecho();
+	game->win = subwin(stdscr, LINES - (WIN_WIDTH - 1) * 2, COLS - (WIN_WIDTH - 1) * 2, 2, 2);
+	keypad(game->win, TRUE);
+	keypad(stdscr, TRUE);
+	nodelay(stdscr, true);
+	nodelay(game->win, true);
 	ret = init_player(&game->player);
 	if (ret != SUCCESS)
 		return (ret);

@@ -2,9 +2,7 @@
 # define FT_SCHMUP_H
 
 # define WIN_WIDTH 3
-# define N_LINES getmaxy(stdscr)
-# define N_COLS getmaxx(stdscr)
-# define MAP_LIMIT N_LINES / 2
+# define MAP_LIMIT LINES / 2
 # define FPS_CAP 1.0f / 60
 
 #include <ncurses.h>
