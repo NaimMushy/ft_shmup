@@ -1,22 +1,4 @@
-void	destroy_entity(t_entity *entity, t_entitylist *e_list, t_game *game)
-{
-	t_entitylist	*prev;
-	t_entitylist	*cur;
-
-	prev = e_list;
-	cur = e_list;
-	while (cur)
-	{
-		if (cur->data == *entity)
-		{
-			prev->next = cur->next;
-			free(cur);
-			break;
-		}
-		prev = cur;
-		cur = cur->next;
-	}
-}
+#include "ft_schmup.h"
 
 void	reduce_hp(t_entity *entity, t_entity *other_entity)
 {

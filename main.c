@@ -2,21 +2,8 @@
 #include <ncurses.h>
 #include <unistd.h>
 
-void	display_game(t_game game)
-{	
-	//clear();
-	werase(game.win);
-	wborder(game.win, '|', '|', '_', '_', '/', '\\', '\\', '/');
-	mvprintw(game.player.row, game.player.col, "%c", game.player.ch);
-	ft_lstiter_display(game.enemies);
-	ft_lstiter_display(game.p_shots);
-	ft_lstiter_display(game.e_shots);
-	//touchwin(stdscr);
-	//refresh();
-	//wrefresh(game.win);
-	return ;
-}
 
+/*
 void	init_enemies(t_entitylist **enemies)
 {
 	t_entitylist	*enemy;
@@ -29,12 +16,12 @@ void	init_enemies(t_entitylist **enemies)
 	ft_lstadd_front(enemies, enemy);
 	return ;
 }
+*/
 
 int main(void)
 {
     int		ret;
 	t_game	game = {0};
-	t_info	info = {0};
 	struct timeval	curtime;
 	int		c = 0;
 
@@ -49,20 +36,20 @@ int main(void)
 	init_enemies(&game.enemies);
 	init_player(&game.player);
 	noecho();
-	ret = init_info(&info, &game);
+	ret = init_info(&game->info, &game);
 	if (ret != SUCCESS)
 		return (ret);
-	curtime = info.t_zero;
+	curtime = game.info.t_zero;
 	display_game(game);
-	display_info(info, &game.frame_time);
+	display_info(game->info, &game.frame_time);
 	while ((c = getch()) != KEY_F(1))
 	{
 		ret = gettimeofday(&game.frame_time, NULL);
 		if (ret != 0)
 			return (ERROR_SYSCALL);
-		update_player(c, &game);
+		update_all(c, &game, game.f_counter);
 		display_game(game);
-		ret = display_info(info, &curtime);
+		ret = display_info(game.info, &curtime);
 		if (ret != SUCCESS)
 			break ;
 		wait_next_frame(&game.frame_time, curtime);

@@ -40,6 +40,7 @@ typedef struct s_info
 typedef struct s_game
 {
 	WINDOW			*win;
+	t_info			info;
 	struct timeval	frame_time;
 	int				f_counter;
 	t_entity		player;
@@ -49,15 +50,34 @@ typedef struct s_game
 	t_entity	map[LINES][COLS];
 }   t_game;
 
-
+//INITIALIZATION FUNCTIONS
 void	init_player(t_entity *player);
-void	update_player(int input, t_game *game);
-void	ft_lstiter_display(t_entitylist *lst);
-void	ft_lstadd_front(t_entitylist **lst, t_entitylist *new);
-t_entitylist	*ft_lstnew(int c);
-
 int		init_info(t_info *ptr_info, t_game *ptr_game);
+
+//UPDATE FUNCTIONS
+void	update_player(int input, t_game *game);
+void	update_entities(t_entitylist *entities, int move, t_game *game);
+void	update_all(int input, t_game *game, int f_counter);
+void	destroy_entity(t_entity *entity, t_entitylist *e_list, t_game *game);
+
+//CREATION FUNCTIONS
+void	add_new_wave(t_game *game, int number);
+void	create_new_eshot(t_entitylist *enemies, t_entitylist *e_shots, t_game *game);
+t_entitylist	*ft_lstnew(int c);
+void	ft_lstadd_front(t_entitylist **lst, t_entitylist *new);
+
+//COLLISION FUNCTIONS
+void	reduce_hp(t_entity *entity, t_entity *other_entity);
+t_entitylist	*set_type(t_entity *entity, t_game *game);
+int	check_walls(int type, int row, int col);
+void	check_collision(t_entity *entity, int row, int col, t_game *game);
+
+//DISPLAY FUNCTIONS
+void	display_game(t_game game);
+void	ft_lstiter_display(t_entitylist *lst);
 int		display_info(t_info info, struct timeval *ptr_curtime);
+
+//FRAME TIME FUNCTIONS
 void	wait_next_frame(struct timeval *ptr_frametime, struct timeval curtime);
 
 #endif

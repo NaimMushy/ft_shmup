@@ -1,4 +1,3 @@
-#include <sys/time.h>
 #include "unistd.h"
 #include "ft_schmup.h"
 
