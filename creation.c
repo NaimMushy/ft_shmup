@@ -1,20 +1,20 @@
 #include "ft_schmup.h"
 #include <stdlib.h>
 
-void	create_new_eshot(t_entitylist *enemies, t_entitylist *e_shots, t_game *game)
+void	create_new_eshot(t_entitylist *enemies, t_entitylist **e_shots, t_game *game)
 {
-	static t_entitylist	*cursor = NULL;
+	t_entitylist	*cursor;
 	t_entitylist	*new_shot;
 
-	if (!cursor)
-		cursor = enemies;
-	if (cursor)
+	cursor = enemies;
+	while (cursor)
 	{
 		new_shot = ft_lstnew('|');
-		ft_lstadd_front(&e_shots, new_shot);
+		ft_lstadd_front(e_shots, new_shot);
 		check_collision(&new_shot->data, cursor->data.row + 1, cursor->data.col, game);
 		cursor = cursor->next;
 	}
+	//dprintf(game->fd, "out of loop\n");
 }
 
 void	add_new_wave(t_game *game, int number)
@@ -24,13 +24,13 @@ void	add_new_wave(t_game *game, int number)
 	int	nb = number;
 
 	new_enemy = NULL;
-	pos = (COLS - 1 - (WIN_WIDTH * 2)) / (number * 2);
+	pos = (COLS - 1 - (WIN_WIDTH << 1)) / (number << 1);
 	while (number--)
 	{
 		new_enemy = ft_lstnew('V');
 		ft_lstadd_front(&game->enemies, new_enemy);
 		check_collision(&new_enemy->data, WIN_WIDTH, pos, game);
-		pos += (COLS - 1 - (WIN_WIDTH * 2)) / nb;
+		pos += (COLS - 1 - (WIN_WIDTH << 1)) / nb;
 	}
 }
 
@@ -45,6 +45,7 @@ t_entitylist	*ft_lstnew(int c)
 	new->data.col = 0;
 	new->data.ch = c;
 	new->data.hp = 1;
+	new->next = NULL;
 	return (new);
 }
 

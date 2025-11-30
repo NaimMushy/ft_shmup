@@ -2,7 +2,7 @@
 # define FT_SCHMUP_H
 
 # define WIN_WIDTH 3
-# define MAP_LIMIT LINES / 2
+# define MAP_LIMIT LINES >> 1
 # define FPS_CAP 60
 
 #include <ncurses.h>
@@ -27,6 +27,7 @@ typedef struct s_entity
 typedef struct s_entitylist
 {
 	t_entity			data;
+	struct s_entitylist	*prev;
 	struct s_entitylist	*next;
 }   t_entitylist;
 
@@ -48,7 +49,7 @@ typedef struct s_game
 	t_entitylist	*enemies;
 	t_entitylist	*e_shots;
 	t_entitylist	*p_shots;
-	char			**map;
+	t_entity		***map;
 }   t_game;
 
 //INITIALIZATION FUNCTIONS
@@ -61,18 +62,14 @@ int		init_all(t_game *game);
 void	update_player(int input, t_game *game);
 void	update_entities(t_entitylist *entities, int move, t_game *game);
 void	update_all(int input, t_game *game);
-void	destroy_entity(t_entity *entity, t_entitylist *e_list, t_game *game);
 
 //CREATION FUNCTIONS
 void			add_new_wave(t_game *game, int number);
-void			create_new_eshot(t_entitylist *enemies, t_entitylist *e_shots, t_game *game);
+void			create_new_eshot(t_entitylist *enemies, t_entitylist **e_shots, t_game *game);
 t_entitylist	*ft_lstnew(int c);
 void			ft_lstadd_front(t_entitylist **lst, t_entitylist *new);
 
 //COLLISION FUNCTIONS
-void			reduce_hp(t_entity *entity, t_entity *other_entity);
-t_entitylist	*set_type(t_entity *entity, t_game *game);
-int				check_walls(int type, int row, int col);
 void			check_collision(t_entity *entity, int row, int col, t_game *game);
 
 //DISPLAY FUNCTIONS
