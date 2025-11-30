@@ -2,7 +2,9 @@
 # define FT_SCHMUP_H
 
 # define WIN_WIDTH 3
-# define MAP_LIMIT LINES / 2
+# define N_LINES getmaxy(stdscr)
+# define N_COLS getmaxx(stdscr)
+# define MAP_LIMIT N_LINES / 2
 # define FPS_CAP 1.0f / 60
 
 #include <ncurses.h>
@@ -47,33 +49,35 @@ typedef struct s_game
 	t_entitylist	*enemies;
 	t_entitylist	*e_shots;
 	t_entitylist	*p_shots;
-	t_entity	map[LINES][COLS];
+	t_entity		***map;
 }   t_game;
 
 //INITIALIZATION FUNCTIONS
-void	init_player(t_entity *player);
+int		init_player(t_entity *player);
 int		init_info(t_info *ptr_info, t_game *ptr_game);
+int		init_map(t_game *game);
+int		init_all(t_game *game);
 
 //UPDATE FUNCTIONS
 void	update_player(int input, t_game *game);
 void	update_entities(t_entitylist *entities, int move, t_game *game);
-void	update_all(int input, t_game *game, int f_counter);
+void	update_all(int input, t_game *game);
 void	destroy_entity(t_entity *entity, t_entitylist *e_list, t_game *game);
 
 //CREATION FUNCTIONS
-void	add_new_wave(t_game *game, int number);
-void	create_new_eshot(t_entitylist *enemies, t_entitylist *e_shots, t_game *game);
+void			add_new_wave(t_game *game, int number);
+void			create_new_eshot(t_entitylist *enemies, t_entitylist *e_shots, t_game *game);
 t_entitylist	*ft_lstnew(int c);
-void	ft_lstadd_front(t_entitylist **lst, t_entitylist *new);
+void			ft_lstadd_front(t_entitylist **lst, t_entitylist *new);
 
 //COLLISION FUNCTIONS
-void	reduce_hp(t_entity *entity, t_entity *other_entity);
+void			reduce_hp(t_entity *entity, t_entity *other_entity);
 t_entitylist	*set_type(t_entity *entity, t_game *game);
-int	check_walls(int type, int row, int col);
-void	check_collision(t_entity *entity, int row, int col, t_game *game);
+int				check_walls(int type, int row, int col);
+void			check_collision(t_entity *entity, int row, int col, t_game *game);
 
 //DISPLAY FUNCTIONS
-void	display_game(t_game game);
+void	display_game(t_game game, struct timeval *ptr_curtime);
 void	ft_lstiter_display(t_entitylist *lst);
 int		display_info(t_info info, struct timeval *ptr_curtime);
 

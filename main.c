@@ -2,54 +2,36 @@
 #include <ncurses.h>
 #include <unistd.h>
 
-
-/*
-void	init_enemies(t_entitylist **enemies)
-{
-	t_entitylist	*enemy;
-
-	enemy = ft_lstnew(5, 6, 'V');
-	ft_lstadd_front(enemies, enemy);
-	enemy = ft_lstnew(10, 15, 'V');
-	ft_lstadd_front(enemies, enemy);
-	enemy = ft_lstnew(3, 70, 'V');
-	ft_lstadd_front(enemies, enemy);
-	return ;
-}
-*/
-
 int main(void)
 {
     int		ret;
 	t_game	game = {0};
 	struct timeval	curtime;
-	int		c = 0;
+	int		input = 0;
 
 	initscr();
 	curs_set(0);
 	cbreak();
-	game.win = subwin(stdscr, LINES - (WIN_WIDTH - 1) * 2, COLS - (WIN_WIDTH - 1) * 2, 2, 2);
+	noecho();
+	game.win = subwin(stdscr, N_LINES - (WIN_WIDTH - 1) * 2, N_COLS - (WIN_WIDTH - 1) * 2, 2, 2);
 	keypad(game.win, TRUE);
 	keypad(stdscr, TRUE);
 	nodelay(stdscr, true);
 	nodelay(game.win, true);
-	init_enemies(&game.enemies);
-	init_player(&game.player);
-	noecho();
-	ret = init_info(&game->info, &game);
+	ret = init_all(&game);
 	if (ret != SUCCESS)
 		return (ret);
 	curtime = game.info.t_zero;
-	display_game(game);
-	display_info(game->info, &game.frame_time);
-	while ((c = getch()) != KEY_F(1))
+	display_game(game, &game.frame_time);
+	//display_info(game->info, &game.frame_time);
+	while ((input = getch()) != KEY_F(1))
 	{
 		ret = gettimeofday(&game.frame_time, NULL);
 		if (ret != 0)
 			return (ERROR_SYSCALL);
-		update_all(c, &game, game.f_counter);
-		display_game(game);
-		ret = display_info(game.info, &curtime);
+		update_all(input, &game);
+		display_game(game, &curtime);
+		//ret = display_info(game.info, &curtime);
 		if (ret != SUCCESS)
 			break ;
 		wait_next_frame(&game.frame_time, curtime);

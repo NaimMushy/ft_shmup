@@ -15,7 +15,7 @@ void	reduce_hp(t_entity *entity, t_entity *other_entity)
 		if (other_entity->ch == 'P' || other_entity->ch == 'o')
 		{
 			entity->hp--;
-			other->entity->hp--;
+			other_entity->hp--;
 		}
 	}
 }
@@ -23,18 +23,19 @@ void	reduce_hp(t_entity *entity, t_entity *other_entity)
 t_entitylist	*set_type(t_entity *entity, t_game *game)
 {
 	if (entity->ch == 'V')
-		return (&game->enemies);
+		return (game->enemies);
 	else if (entity->ch == 'o')
-		return (&game->p_shots);
+		return (game->p_shots);
 	else if (entity->ch == '|')
-		return (&game->e_shots);
+		return (game->e_shots);
+	return (NULL);
 }
 
 int	check_walls(int type, int row, int col)
 {
 	if (type == 'P' && row <= MAP_LIMIT)
 		return (0);
-	if (row < WIN_WIDTH || row >= LINES - WIN_WIDTH - 1 || col < WIN_WIDTH || col >= COLS - WIN_WIDTH - 1)
+	if (row < WIN_WIDTH || row >= N_LINES - WIN_WIDTH - 1 || col < WIN_WIDTH || col >= N_COLS - WIN_WIDTH - 1)
 		return (0);
 	return (1);
 }
@@ -55,13 +56,13 @@ void	check_collision(t_entity *entity, int row, int col, t_game *game)
 			game->map[row][col] = entity;
 			return ;
 		}
-		else if (entity->ch != 'P'
+		else if (entity->ch != 'P')
 			entity->hp = 0;
 	}
 	else
 		reduce_hp(entity, other_entity);
 	entity_type = set_type(entity, game);
-	if (entity->hp == 0 && entity->ch != 'P')
+	if (entity_type && entity->hp == 0 && entity->ch != 'P')
 		destroy_entity(entity, entity_type, game);
 	if (other_entity && other_entity->hp == 0 && entity->ch != 'P')
 	{

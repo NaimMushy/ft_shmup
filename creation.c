@@ -1,19 +1,20 @@
 #include "ft_schmup.h"
+#include <stdlib.h>
 
 void	create_new_eshot(t_entitylist *enemies, t_entitylist *e_shots, t_game *game)
 {
-	static t_entitylist	*cursor = enemies;
+	static t_entitylist	*cursor = NULL;
 	t_entitylist	*new_shot;
 
+	if (!cursor)
+		cursor = enemies;
 	if (cursor)
 	{
 		new_shot = ft_lstnew('|');
-		ft_lstadd_front(e_shots, new_shot);
+		ft_lstadd_front(&e_shots, new_shot);
 		check_collision(&new_shot->data, cursor->data.row + 1, cursor->data.col, game);
 		cursor = cursor->next;
 	}
-	else
-		cursor = enemies;
 }
 
 void	add_new_wave(t_game *game, int number)

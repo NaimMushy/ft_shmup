@@ -1,16 +1,17 @@
 #include "ft_schmup.h"
 #include <sys/time.h>
 
-void	display_game(t_game game)
-{	
+void	display_game(t_game game, struct timeval *ptr_curtime)
+{
 	//clear();
 	//erase();
-	werase(game.win);
-	wborder(game.win, '|', '|', '_', '_', '/', '\\', '\\', '/');
 	mvprintw(game.player.row, game.player.col, "%c", game.player.ch);
 	ft_lstiter_display(game.enemies);
 	ft_lstiter_display(game.p_shots);
 	ft_lstiter_display(game.e_shots);
+	display_info(game.info, ptr_curtime);
+	werase(game.win);
+	wborder(game.win, '|', '|', '_', '_', '/', '\\', '\\', '/');
 	//touchwin(stdscr);
 	//refresh();
 	//wrefresh(game.win);
