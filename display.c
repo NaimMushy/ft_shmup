@@ -1,7 +1,7 @@
 #include "ft_schmup.h"
 #include <sys/time.h>
 
-static int	ft_lstiter_display(t_entitylist *lst);
+static int	ft_lstiter_display(t_entitylist *lst, WINDOW *win);
 static int	display_info(t_info info, struct timeval *ptr_curtime);
 
 int	display_game(t_game game, struct timeval *ptr_curtime)

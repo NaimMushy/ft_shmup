@@ -15,11 +15,11 @@ void	game_over(t_game *game)
 	mvwprintw(game->win, txt_lines, txt_cols, "%s", "GAME OVER");
 	mvwhline(game->win, txt_lines + 2, b_cols >> 1, '_', b_cols);
 	txt_lines += b_lines / 3;
-	txt-cols = (b_cols - (strlen("score : ") + 10) / 2;
+	txt_cols = (b_cols - (strlen("score : ") + 10)) / 2;
 	mvwprintw(game->win, txt_lines, txt_cols, "score : %010d", game->info.score);
 	mvwhline(game->win, txt_lines + 2, b_cols >> 1, '_', b_cols);
 	txt_lines += b_lines / 3;
-	txt_cols = (b_cols - (strlen("PRESS F1 TO EXIT")) >> 1;
+	txt_cols = (b_cols - (strlen("PRESS F1 TO EXIT"))) >> 1;
 	mvwprintw(game->win, txt_lines, txt_cols, "%s", "PRESS F1 TO EXIT");
 	wrefresh(game->win);
 	while ((input = getch()) != KEY_F(1))
