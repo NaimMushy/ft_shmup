@@ -1,33 +1,46 @@
 #include "ft_schmup.h"
 #include <sys/time.h>
 
-void	display_game(t_game game, struct timeval *ptr_curtime)
+static int	ft_lstiter_display(t_entitylist *lst);
+static int	display_info(t_info info, struct timeval *ptr_curtime);
+
+int	display_game(t_game game, struct timeval *ptr_curtime)
 {
-	//clear();
-	//erase();
-	werase(game.win);
-	wborder(game.win, '|', '|', '_', '_', '/', '\\', '\\', '/');
-	mvprintw(game.player.row, game.player.col, "%c", game.player.ch);
-	ft_lstiter_display(game.enemies);
-	ft_lstiter_display(game.p_shots);
-	ft_lstiter_display(game.e_shots);
-	display_info(game.info, ptr_curtime);
-	//touchwin(stdscr);
-	//refresh();
-	//wrefresh(game.win);
-	return ;
+	int	ret;
+
+	if (werase(game.win) == ERR)
+		return (ERROR_NCURSES);
+	if (wborder(game.win, '|', '|', '_', '_', '/', '\\', '\\', '/'))
+		return (ERROR_NCURSES);
+	if (mvprintw(game.player.row, game.player.col, "%c", game.player.ch))
+		return (ERROR_NCURSES);
+	ret = ft_lstiter_display(game.enemies);
+	if (ret != SUCCESS)
+		return (ret);
+	ret = ft_lstiter_display(game.p_shots);
+	if (ret != SUCCESS)
+		return (ret);
+	ret = ft_lstiter_display(game.e_shots);
+	if (ret != SUCCESS)
+		return (ret);
+	ret = display_info(game.info, ptr_curtime);
+	if (ret != SUCCESS)
+		return (ret);
+	return (SUCCESS);
 }
 
-void	ft_lstiter_display(t_entitylist *lst)
+static int	ft_lstiter_display(t_entitylist *lst)
 {
 	while (lst)
 	{
-		mvprintw(lst->data.row, lst->data.col, "%c", lst->data.ch);	
+		if (mvprintw(lst->data.row, lst->data.col, "%c", lst->data.ch) == ERR)
+			return (ERROR_NCURSES);	
 		lst = lst->next;
 	}
+	return (SUCCESS);
 }
 
-int	display_info(t_info info, struct timeval *ptr_curtime)
+static int	display_info(t_info info, struct timeval *ptr_curtime)
 {
 	int				ret;
 	

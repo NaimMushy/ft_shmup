@@ -14,7 +14,8 @@ C_FILES := \
 	display.c \
 	update.c \
 	collision.c \
-	frames.c
+	frames.c \
+	free_everything.c \
 
 OBJ_DIR := .obj/
 OBJ_FILES := $(addprefix $(OBJ_DIR), $(C_FILES:.c=.o))

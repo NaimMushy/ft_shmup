@@ -2,9 +2,9 @@
 #include "ft_schmup.h"
 
 static t_entitylist	**set_type(t_entity *entity, t_game *game);
-static int	check_walls(int type, int row, int col);
-static void	destroy_entity(t_entity *entity, t_game *game);
-static void	move_entity(t_entity *entity, int row, int col, t_game *game);
+static int			check_walls(int type, int row, int col);
+static void			destroy_entity(t_entity *entity, t_game *game);
+static void			move_entity(t_entity *entity, int row, int col, t_game *game);
 
 void	check_collision(t_entity *entity, int row, int col, t_game *game)
 {
@@ -13,7 +13,6 @@ void	check_collision(t_entity *entity, int row, int col, t_game *game)
 	other = game->map[row][col];
 	if (other != NULL)
 	{
-		//dprintf(game->fd, "collision between %c and %c\n", entity->ch, other->ch);
 		--entity->hp;
 		--other->hp;
 		if (other->ch != 'P' && other->hp <= 0)

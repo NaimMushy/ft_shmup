@@ -1,7 +1,7 @@
 #include "ft_schmup.h"
 #include <stdlib.h>
 
-void	create_new_eshot(t_entitylist *enemies, t_entitylist **e_shots, t_game *game)
+int	create_new_eshot(t_entitylist *enemies, t_entitylist **e_shots, t_game *game)
 {
 	t_entitylist	*cursor;
 	t_entitylist	*new_shot;
@@ -10,14 +10,16 @@ void	create_new_eshot(t_entitylist *enemies, t_entitylist **e_shots, t_game *gam
 	while (cursor)
 	{
 		new_shot = ft_lstnew('|');
+		if (new_shot == NULL)
+			return (ERROR_ALLOC);
 		ft_lstadd_front(e_shots, new_shot);
 		check_collision(&new_shot->data, cursor->data.row + 1, cursor->data.col, game);
 		cursor = cursor->next;
 	}
-	//dprintf(game->fd, "out of loop\n");
+	return (SUCCESS);
 }
 
-void	add_new_wave(t_game *game, int number)
+int	add_new_wave(t_game *game, int number)
 {
 	t_entitylist	*new_enemy;
 	int	pos;
@@ -28,10 +30,13 @@ void	add_new_wave(t_game *game, int number)
 	while (number--)
 	{
 		new_enemy = ft_lstnew('V');
+		if (new_enemy == NULL)
+			return (ERROR_ALLOC);
 		ft_lstadd_front(&game->enemies, new_enemy);
 		check_collision(&new_enemy->data, WIN_WIDTH, pos, game);
 		pos += (COLS - 1 - (WIN_WIDTH << 1)) / nb;
 	}
+	return (SUCCESS);
 }
 
 t_entitylist	*ft_lstnew(int c)

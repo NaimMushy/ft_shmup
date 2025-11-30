@@ -52,32 +52,30 @@ typedef struct s_game
 	t_entity		***map;
 }   t_game;
 
-//INITIALIZATION FUNCTIONS
-int		init_player(t_game *game, t_entity *player);
-int		init_info(t_info *ptr_info, t_game *ptr_game);
-int		init_map(t_game *game);
+//INITIALIZATION
 int		init_all(t_game *game);
 
-//UPDATE FUNCTIONS
-void	update_player(int input, t_game *game);
-void	update_entities(t_entitylist *entities, int move, t_game *game);
-void	update_all(int input, t_game *game);
+//UPDATE
+int	update_all(int input, t_game *game);
 
-//CREATION FUNCTIONS
-void			add_new_wave(t_game *game, int number);
-void			create_new_eshot(t_entitylist *enemies, t_entitylist **e_shots, t_game *game);
+//CREATION
 t_entitylist	*ft_lstnew(int c);
+int				add_new_wave(t_game *game, int number);
+int				create_new_eshot(t_entitylist *enemies, t_entitylist **e_shots, t_game *game);
 void			ft_lstadd_front(t_entitylist **lst, t_entitylist *new);
 
-//COLLISION FUNCTIONS
-void			check_collision(t_entity *entity, int row, int col, t_game *game);
+//COLLISION
+void	check_collision(t_entity *entity, int row, int col, t_game *game);
 
-//DISPLAY FUNCTIONS
-void	display_game(t_game game, struct timeval *ptr_curtime);
-void	ft_lstiter_display(t_entitylist *lst);
-int		display_info(t_info info, struct timeval *ptr_curtime);
+//DISPLAY
+int		display_game(t_game game, struct timeval *ptr_curtime);
 
-//FRAME TIME FUNCTIONS
+//FRAME TIME
 void	wait_next_frame(struct timeval *ptr_frametime, struct timeval curtime);
+
+//FREE
+void	free_all(t_game game);
+void	free_lst(t_entitylist **ptr_lst);
+void	free_map(t_entity ****ptr_map);
 
 #endif

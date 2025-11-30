@@ -1,46 +1,11 @@
 #include "ft_schmup.h"
 #include <stdlib.h>
 
-int	init_player(t_game *game, t_entity *player)
-{
-	player->row = LINES - WIN_WIDTH - 1;
-	player->col = ((COLS - 1) / 2) - 1;
-	player->hp = 3;
-	player->ch = 'P';
-	game->map[player->row][player->col] = player;
-	return (SUCCESS);
-}
+static void	init_player(t_game *game, t_entity *player);
+static int	init_info(t_info *ptr_info, t_game *ptr_game);
+static int	init_map(t_game *game);
 
-int	init_info(t_info *ptr_info, t_game *ptr_game)
-{
-	int	ret;
-	
-	ptr_info->ptr_player_hp = &ptr_game->player.hp;
-	ptr_info->score = 0;
-	ret = gettimeofday(&ptr_info->t_zero, NULL);
-	if (ret == -1)
-		return (ERROR_SYSCALL);
-	return (SUCCESS);
-}
-
-int	init_map(t_game *game)
-{
-	int	index = 0;
-
-	game->map = malloc(sizeof(t_entity **) * LINES);
-	if (!game->map)
-		return (ERROR_ALLOC);
-	while (index < LINES)
-	{
-		game->map[index] = calloc(COLS, sizeof(t_entity *));
-		if (!game->map[index])
-			return (ERROR_ALLOC);
-		++index;
-	}
-	return (SUCCESS);
-}
-
-int init_all(t_game *game)
+int	init_all(t_game *game)
 {
 	int	ret;
 
@@ -56,11 +21,47 @@ int init_all(t_game *game)
 	ret = init_map(game);
 	if (ret != SUCCESS)
 		return (ret);
-	ret = init_player(game, &game->player);
-	if (ret != SUCCESS)
-		return (ret);
+	init_player(game, &game->player);
 	ret = init_info(&game->info, game);
 	if (ret != SUCCESS)
 		return (ret);
+	return (SUCCESS);
+}
+
+static void	init_player(t_game *game, t_entity *player)
+{
+	player->row = LINES - WIN_WIDTH - 1;
+	player->col = ((COLS - 1) / 2) - 1;
+	player->hp = 3;
+	player->ch = 'P';
+	game->map[player->row][player->col] = player;
+}
+
+static int	init_info(t_info *ptr_info, t_game *ptr_game)
+{
+	int	ret;
+	
+	ptr_info->ptr_player_hp = &ptr_game->player.hp;
+	ptr_info->score = 0;
+	ret = gettimeofday(&ptr_info->t_zero, NULL);
+	if (ret == -1)
+		return (ERROR_SYSCALL);
+	return (SUCCESS);
+}
+
+static int	init_map(t_game *game)
+{
+	int	index = 0;
+
+	game->map = malloc(sizeof(t_entity **) * LINES);
+	if (!game->map)
+		return (ERROR_ALLOC);
+	while (index < LINES)
+	{
+		game->map[index] = calloc(COLS, sizeof(t_entity *));
+		if (!game->map[index])
+			return (ERROR_ALLOC);
+		++index;
+	}
 	return (SUCCESS);
 }
