@@ -3,7 +3,7 @@
 
 # define WIN_WIDTH 3
 # define MAP_LIMIT LINES / 2
-# define FPS_CAP 1.0f / 60
+# define FPS_CAP 60
 
 #include <ncurses.h>
 #include <sys/time.h>
