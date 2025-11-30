@@ -1,12 +1,13 @@
 #include "ft_schmup.h"
 #include <stdlib.h>
 
-int	init_player(t_entity *player)
+int	init_player(t_game *game, t_entity *player)
 {
 	player->row = LINES - WIN_WIDTH - 1;
 	player->col = ((COLS - 1) / 2) - 1;
 	player->hp = 3;
 	player->ch = 'P';
+	game->map[player->row][player->col] = 'P';
 	return (SUCCESS);
 }
 
@@ -27,21 +28,17 @@ int	init_info(t_info *ptr_info, t_game *ptr_game)
 
 int	init_map(t_game *game)
 {
-	int	index, index2;
+	int	index = 0;
 
-	game->map = malloc(sizeof(t_entity **) * LINES);
+	game->map = malloc(sizeof(char *) * LINES);
 	if (!game->map)
 		return (ERROR_ALLOC);
-	index = 0;
 	while (index < LINES)
 	{
-		game->map[index] = malloc(sizeof(t_entity *) * COLS);
+		game->map[index] = calloc(COLS, sizeof(char));
 		if (!game->map[index])
 			return (ERROR_ALLOC);
-		index2 = -1;
-		while (++index2 < COLS)
-			game->map[index][index2] = NULL;
-		index++;
+		++index;
 	}
 	return (SUCCESS);
 }
@@ -59,7 +56,7 @@ int init_all(t_game *game)
 	keypad(stdscr, TRUE);
 	nodelay(stdscr, true);
 	nodelay(game->win, true);
-	ret = init_player(&game->player);
+	ret = init_player(game, &game->player);
 	if (ret != SUCCESS)
 		return (ret);
 	ret = init_info(&game->info, game);

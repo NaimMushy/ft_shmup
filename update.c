@@ -37,8 +37,11 @@ void	update_entities(t_entitylist *entities, int move, t_game *game)
 	t_entitylist	*cursor;
 
 	cursor = entities;
+	if (cursor)
+		dprintf(game->fd, "start of entity list is not null\n");
 	while (cursor)
 	{
+		dprintf(game->fd, "row of entity : %d\ncol of entity : %d\n", cursor->data.row, cursor->data.col);
 		check_collision(&cursor->data, cursor->data.row + move, cursor->data.col, game);
 		cursor = cursor->next;
 	}
@@ -47,16 +50,13 @@ void	update_entities(t_entitylist *entities, int move, t_game *game)
 void	update_all(int input, t_game *game)
 {
 	update_player(input, game);
-	if (game->f_counter % 300 == 0)
-		add_new_wave(game, 5);
-	if (game->f_counter % 60 == 0)
-		update_entities(game->enemies, 1, game);
-	if (game->f_counter % 30 == 0)
-	{
-		create_new_eshot(game->enemies, game->e_shots, game);
-		update_entities(game->p_shots, -1, game);
-		update_entities(game->e_shots, 1, game);
-	}
+	//if (game->f_counter % 60 == 0)
+		//update_entities(game->enemies, 1, game);
+	//create_new_eshot(game->enemies, game->e_shots, game);
+	update_entities(game->p_shots, -1, game);
+	update_entities(game->e_shots, 1, game);
+	//if (game->f_counter && game->f_counter % 300 == 0)
+		//add_new_wave(game, 5);
 }
 
 void	destroy_entity(t_entity *entity, t_entitylist *e_list, t_game *game)
@@ -73,10 +73,12 @@ void	destroy_entity(t_entity *entity, t_entitylist *e_list, t_game *game)
 		if (&cur->data == entity)
 		{
 			prev->next = cur->next;
-			free(cur);
+			free(entity);
+			entity = NULL;
 			break;
 		}
 		prev = cur;
 		cur = cur->next;
 	}
+	dprintf(game->fd, "succeeded in destroying entity at frame : %d\n", game->f_counter);
 }

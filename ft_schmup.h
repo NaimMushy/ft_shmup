@@ -43,15 +43,16 @@ typedef struct s_game
 	t_info			info;
 	struct timeval	frame_time;
 	int				f_counter;
+	int				fd;
 	t_entity		player;
 	t_entitylist	*enemies;
 	t_entitylist	*e_shots;
 	t_entitylist	*p_shots;
-	t_entity		***map;
+	char			**map;
 }   t_game;
 
 //INITIALIZATION FUNCTIONS
-int		init_player(t_entity *player);
+int		init_player(t_game *game, t_entity *player);
 int		init_info(t_info *ptr_info, t_game *ptr_game);
 int		init_map(t_game *game);
 int		init_all(t_game *game);

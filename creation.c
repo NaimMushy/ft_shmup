@@ -24,13 +24,13 @@ void	add_new_wave(t_game *game, int number)
 	int	nb = number;
 
 	new_enemy = NULL;
-	pos = (COLS - 1) / (number * 2);
+	pos = (COLS - 1 - (WIN_WIDTH * 2)) / (number * 2);
 	while (number--)
 	{
 		new_enemy = ft_lstnew('V');
 		ft_lstadd_front(&game->enemies, new_enemy);
 		check_collision(&new_enemy->data, WIN_WIDTH, pos, game);
-		pos += (COLS - 1) / nb;
+		pos += (COLS - 1 - (WIN_WIDTH * 2)) / nb;
 	}
 }
 
@@ -44,6 +44,7 @@ t_entitylist	*ft_lstnew(int c)
 	new->data.row = 0;
 	new->data.col = 0;
 	new->data.ch = c;
+	new->data.hp = 1;
 	return (new);
 }
 

@@ -40,34 +40,83 @@ int	check_walls(int type, int row, int col)
 	return (1);
 }
 
+/*
 void	check_collision(t_entity *entity, int row, int col, t_game *game)
 {
 	t_entity	*other_entity;
 	t_entitylist	*entity_type;
+	int	ret = 0;
 
 	other_entity = game->map[row][col];
 	if (!other_entity)
 	{
-		if (check_walls(entity->ch, row, col))
+		ret = check_walls(entity->ch, row, col);
+		game->map[entity->row][entity->col] = NULL;
+		if (ret)
 		{
-			game->map[entity->row][entity->col] = NULL;
+			dprintf(game->fd, "case unoccupied, updating coordinates\n");
 			entity->row = row;
 			entity->col = col;
 			game->map[row][col] = entity;
 			return ;
 		}
-		else if (entity->ch != 'P')
+		else if (!ret && entity->ch != 'P')
 			entity->hp = 0;
 	}
 	else
 		reduce_hp(entity, other_entity);
+	dprintf(game->fd, "case occupied, reducing hp\n");
 	entity_type = set_type(entity, game);
-	if (entity_type && entity->hp == 0 && entity->ch != 'P')
+	if (entity_type && entity->hp <= 0 && entity->ch != 'P')
 		destroy_entity(entity, entity_type, game);
-	if (other_entity && other_entity->hp == 0 && entity->ch != 'P')
+	if (other_entity && other_entity->hp <= 0 && entity->ch != 'P')
 	{
 		entity_type = set_type(other_entity, game);
 		destroy_entity(other_entity, entity_type, game);
 	}
 	return;
+}
+*/
+
+void	check_collision(t_entity *entity, int row, int col, t_game *game)
+{
+	t_entitylist	*type;
+
+	if (game->map[row][col] != 0)
+	{
+		entity->hp--;
+		if (entity->hp <= 0)
+		{
+			type = set_type(entity->ch);
+			find_entity(entity->row, entity->col, type, game);
+			destroy_entity
+
+		find_entity(row, col, game->map[row][col], game);
+		return ;
+	}
+	if (check_walls
+}
+
+void	destroy_entity(t_entity *entity, t_entitylist *e_list, t_game *game)
+{
+	t_entitylist	*prev;
+	t_entitylist	*cur;
+
+	if (entity->ch == 'V')
+		game->info.score += 50;
+	prev = e_list;
+	cur = e_list;
+	while (cur)
+	{
+		if (&cur->data == entity)
+		{
+			prev->next = cur->next;
+			free(entity);
+			entity = NULL;
+			break;
+		}
+		prev = cur;
+		cur = cur->next;
+	}
+	dprintf(game->fd, "succeeded in destroying entity at frame : %d\n", game->f_counter);
 }

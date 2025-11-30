@@ -1,6 +1,7 @@
 #include "ft_schmup.h"
 #include <ncurses.h>
 #include <unistd.h>
+#include <fcntl.h>
 
 int main(void)
 {
@@ -10,6 +11,7 @@ int main(void)
 	int		input = 0;
 
 	ret = init_all(&game);
+	game.fd = open("./log.txt", O_CREAT | O_RDWR);
 	if (ret != SUCCESS)
 		return (ret);
 	curtime = game.info.t_zero;
