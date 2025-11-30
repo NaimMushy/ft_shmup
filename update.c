@@ -13,14 +13,22 @@ int	update_all(int input, t_game *game)
 	if (ret != SUCCESS)
 		return (ret);
 	update_entities(game->e_shots, 1, game);
-	if (game->f_counter % 60 == 0)
+	if (game->f_counter % FPS_CAP == 0)
 		update_entities(game->enemies, 1, game);
-	ret = create_new_eshot(game->enemies, &game->e_shots, game);
-	if (ret != SUCCESS)
-		return (ret);
-	if (game->f_counter && game->f_counter % 300 == 0)
+	if (game->f_counter % FPS_CAP == 0)
 	{
-		ret = add_new_wave(game, 1);
+		ret = create_new_eshot(game->enemies, &game->e_shots, game);
+		if (ret != SUCCESS)
+			return (ret);
+	}
+	if (game->f_counter % (game->spawn.timer * FPS_CAP) == 0)
+	{
+		if (game->spawn.kills != 0 && game->spawn.kills % 20 == 0 && game->spawn.wave_size < 10)
+		{
+			++game->spawn.wave_size;
+			game->spawn.ppk += 25;
+		}
+		ret = add_new_wave(game, game->spawn.wave_size);
 		if (ret != SUCCESS)
 			return (ret);
 	}

@@ -42,9 +42,18 @@ typedef struct s_info
 	struct timeval	t_zero;
 }   t_info;
 
+typedef struct s_spawn_info
+{
+	int	kills;
+	int	timer;
+	int ppk;
+	int	wave_size;
+}	t_spawn_info;
+
 typedef struct s_game
 {
 	WINDOW			*win;
+	t_spawn_info	spawn;
 	t_info			info;
 	struct timeval	frame_time;
 	int				f_counter;

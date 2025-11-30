@@ -1,4 +1,5 @@
 #include <string.h>
+#include <unistd.h>
 #include "ft_schmup.h"
 
 void	game_over(t_game *game)

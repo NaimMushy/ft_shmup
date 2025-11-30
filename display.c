@@ -1,7 +1,7 @@
 #include "ft_schmup.h"
 #include <sys/time.h>
 
-static int	ft_lstiter_display(t_entitylist *lst, WINDOW *win);
+static int	ft_lstiter_display(t_entitylist *lst);//, WINDOW *win);
 static int	display_info(t_info info, struct timeval *ptr_curtime);
 
 int	display_game(t_game game, struct timeval *ptr_curtime)
@@ -12,15 +12,15 @@ int	display_game(t_game game, struct timeval *ptr_curtime)
 		return (ERROR_NCURSES);
 	if (wborder(game.win, '|', '|', '_', '_', '/', '\\', '\\', '/'))
 		return (ERROR_NCURSES);
-	if (mvwaddch(game.win, game.player.row, game.player.col, game.player.ch))
+	if (mvaddch(game.player.row, game.player.col, game.player.ch) == ERR)
 		return (ERROR_NCURSES);
-	ret = ft_lstiter_display(game.enemies, game.win);
+	ret = ft_lstiter_display(game.enemies);//, game.win);
 	if (ret != SUCCESS)
 		return (ret);
-	ret = ft_lstiter_display(game.p_shots, game.win);
+	ret = ft_lstiter_display(game.p_shots);//, game.win);
 	if (ret != SUCCESS)
 		return (ret);
-	ret = ft_lstiter_display(game.e_shots, game.win);
+	ret = ft_lstiter_display(game.e_shots);//, game.win);
 	if (ret != SUCCESS)
 		return (ret);
 	ret = display_info(game.info, ptr_curtime);
@@ -29,11 +29,11 @@ int	display_game(t_game game, struct timeval *ptr_curtime)
 	return (SUCCESS);
 }
 
-static int	ft_lstiter_display(t_entitylist *lst, WINDOW *win)
+static int	ft_lstiter_display(t_entitylist *lst)//, WINDOW *win)
 {
 	while (lst)
 	{
-		if (mvwaddch(win, lst->data.row, lst->data.col, lst->data.ch) == ERR)
+		if (mvaddch(lst->data.row, lst->data.col, lst->data.ch) == ERR)
 			return (ERROR_NCURSES);	
 		lst = lst->next;
 	}

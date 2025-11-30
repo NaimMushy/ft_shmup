@@ -12,14 +12,8 @@ int main(void)
 
 	ret = init_all(&game);
 	if (ret != SUCCESS)
-		return (ret);
+	return (ret);
 	curtime = game.info.t_zero;
-	ret = display_game(game, &game.frame_time);
-	if (ret != SUCCESS)
-	{
-		free_all(game);
-		return (ret);
-	}
 	while ((input = getch()) != KEY_F(1))
 	{
 		ret = gettimeofday(&game.frame_time, NULL);
@@ -29,16 +23,17 @@ int main(void)
 			break ;
 		}
 		ret = update_all(input, &game);
-		if (ret != SUCCESS || game.player.hp == 0)
-		{
-			free_all(game);
-			game_over(game);
-			break ;
-		}
-		ret = display_game(game, &curtime);
 		if (ret != SUCCESS)
 		{
 			free_all(game);
+			break ;
+		}
+		ret = display_game(game, &curtime);
+		if (ret != SUCCESS || game.player.hp == 0)
+		{
+			free_all(game);
+			if (ret == SUCCESS)
+				game_over(&game);
 			break ;
 		}
 		wait_next_frame(&game.frame_time, curtime);
@@ -55,6 +50,8 @@ int main(void)
 			break ;
 		}
 		++game.f_counter;
+		if (game.f_counter >= 300)
+			game.f_counter = 0;
 	}
 	endwin();
 	return (ret);

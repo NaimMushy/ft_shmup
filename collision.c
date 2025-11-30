@@ -47,7 +47,7 @@ static int	check_walls(int type, int row, int col)
 {
 	if (type == PLAYER && row <= MAP_LIMIT)
 		return (TRUE);
-	if (row < WIN_WIDTH || row >= LINES - WIN_WIDTH || col < WIN_WIDTH || col >= COLS - WIN_WIDTH)
+	if (row <= WIN_WIDTH || row > LINES - WIN_WIDTH || col <= WIN_WIDTH || col > COLS - WIN_WIDTH)
 		return (TRUE);
 	return (FALSE);
 }
@@ -59,7 +59,7 @@ static void	destroy_entity(t_entity *entity, t_game *game)
 	t_entitylist	*cur;
 	
 	if (entity->ch == ENEMY)
-		game->info.score += 50;
+		game->info.score += game->spawn.ppk;
 	head = set_type(entity, game);
 	cur = *head;
 	while (cur)

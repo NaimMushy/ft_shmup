@@ -19,6 +19,26 @@ int	create_new_eshot(t_entitylist *enemies, t_entitylist **e_shots, t_game *game
 	return (SUCCESS);
 }
 
+static int get_free_col(int start, t_entitylist *enemies)
+{
+	t_entitylist	*lst_i;
+	int				final;
+
+	lst_i = enemies;
+	final = start;
+	while (final < COLS && lst_i)
+	{
+		if (lst_i->data.col == final)
+		{
+			++final;
+			lst_i = enemies;
+		}
+		else
+			lst_i = lst_i->next;
+	}
+	return (final);
+}
+
 int	add_new_wave(t_game *game, int number)
 {
 	t_entitylist	*new_enemy;
@@ -32,8 +52,14 @@ int	add_new_wave(t_game *game, int number)
 		new_enemy = ft_lstnew(ENEMY);
 		if (new_enemy == NULL)
 			return (ERROR_ALLOC);
+		pos = get_free_col(pos, game->enemies);
+		if (pos >= COLS)
+		{
+			free(new_enemy);
+			return (SUCCESS);
+		}
 		ft_lstadd_front(&game->enemies, new_enemy);
-		check_collision(&new_enemy->data, WIN_WIDTH, pos, game);
+		check_collision(&new_enemy->data, WIN_WIDTH + 1, pos, game);
 		pos += (COLS - 1 - (WIN_WIDTH << 1)) / nb;
 	}
 	return (SUCCESS);

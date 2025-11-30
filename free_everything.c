@@ -7,12 +7,16 @@ void	free_all(t_game game)
 	free_lst(&game.p_shots);
 	free_lst(&game.enemies);
 	free_map(&game.map);
+	werase(game.win);
+	wrefresh(game.win);
+	erase();
+	refresh();
 	delwin(game.win);
 }
 
 void	free_lst(t_entitylist **ptr_lst)
-{
-	if ((*ptr_lst)->next)
+{	
+	if ((*ptr_lst) && (*ptr_lst)->next)
 		free_lst(&(*ptr_lst)->next);
 	free(*ptr_lst);
 	*ptr_lst = NULL;

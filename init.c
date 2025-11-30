@@ -13,11 +13,15 @@ int	init_all(t_game *game)
 	curs_set(0);
 	cbreak();
 	noecho();
-	game->win = subwin(stdscr, LINES - (WIN_WIDTH - 1) << 1, COLS - (WIN_WIDTH - 1) << 1, WIN_WIDTH, WIN_WIDTH);
+	game->win = subwin(stdscr, LINES - ((WIN_WIDTH - 1) << 1), COLS - ((WIN_WIDTH - 1) << 1), WIN_WIDTH, WIN_WIDTH);
 	keypad(game->win, TRUE);
 	keypad(stdscr, TRUE);
 	nodelay(stdscr, true);
 	nodelay(game->win, true);
+	game->spawn.kills = 0;
+	game->spawn.timer = 5;
+	game->spawn.ppk = 50;
+	game->spawn.wave_size = 3;
 	ret = init_map(game);
 	if (ret != SUCCESS)
 		return (ret);
@@ -30,8 +34,8 @@ int	init_all(t_game *game)
 
 static void	init_player(t_game *game, t_entity *player)
 {
-	player->row = LINES - WIN_WIDTH - 1;
-	player->col = ((COLS - 1) >> 1) - 1;
+	player->row = LINES - WIN_WIDTH;
+	player->col = ((COLS - 1) >> 1);
 	player->hp = 3;
 	player->ch = PLAYER;
 	game->map[player->row][player->col] = player;

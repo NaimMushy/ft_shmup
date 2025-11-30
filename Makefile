@@ -16,6 +16,7 @@ C_FILES := \
 	collision.c \
 	frames.c \
 	free_everything.c \
+	game_over.c \
 
 OBJ_DIR := .obj/
 OBJ_FILES := $(addprefix $(OBJ_DIR), $(C_FILES:.c=.o))
