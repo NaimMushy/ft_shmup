@@ -13,7 +13,7 @@ int	init_all(t_game *game)
 	curs_set(0);
 	cbreak();
 	noecho();
-	game->win = subwin(stdscr, LINES - (WIN_WIDTH - 1) * 2, COLS - (WIN_WIDTH - 1) * 2, 2, 2);
+	game->win = subwin(stdscr, LINES - (WIN_WIDTH - 1) << 1, COLS - (WIN_WIDTH - 1) << 1, WIN_WIDTH, WIN_WIDTH);
 	keypad(game->win, TRUE);
 	keypad(stdscr, TRUE);
 	nodelay(stdscr, true);
@@ -31,7 +31,7 @@ int	init_all(t_game *game)
 static void	init_player(t_game *game, t_entity *player)
 {
 	player->row = LINES - WIN_WIDTH - 1;
-	player->col = ((COLS - 1) / 2) - 1;
+	player->col = ((COLS - 1) >> 1) - 1;
 	player->hp = 3;
 	player->ch = 'P';
 	game->map[player->row][player->col] = player;

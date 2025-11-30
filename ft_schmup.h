@@ -69,6 +69,7 @@ void	check_collision(t_entity *entity, int row, int col, t_game *game);
 
 //DISPLAY
 int		display_game(t_game game, struct timeval *ptr_curtime);
+void	game_over(t_game *game);
 
 //FRAME TIME
 void	wait_next_frame(struct timeval *ptr_frametime, struct timeval curtime);
