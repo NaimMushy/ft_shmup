@@ -26,7 +26,7 @@ static int get_free_col(int start, t_entitylist *enemies)
 
 	lst_i = enemies;
 	final = start;
-	while (final < COLS && lst_i)
+	while (final < SUB_COLS && lst_i)
 	{
 		if (lst_i->data.col == final)
 		{
@@ -46,21 +46,21 @@ int	add_new_wave(t_game *game, int number)
 	int	nb = number;
 
 	new_enemy = NULL;
-	pos = (COLS - 1 - (WIN_WIDTH << 1)) / (number << 1);
+	pos = (SUB_COLS - 1) / (number << 1);
 	while (number--)
 	{
 		new_enemy = ft_lstnew(ENEMY);
 		if (new_enemy == NULL)
 			return (ERROR_ALLOC);
 		pos = get_free_col(pos, game->enemies);
-		if (pos >= COLS)
+		if (pos >= SUB_COLS)
 		{
 			free(new_enemy);
 			return (SUCCESS);
 		}
 		ft_lstadd_front(&game->enemies, new_enemy);
-		check_collision(&new_enemy->data, WIN_WIDTH + 1, pos, game);
-		pos += (COLS - 1 - (WIN_WIDTH << 1)) / nb;
+		check_collision(&new_enemy->data, 1, pos, game);
+		pos += (SUB_COLS - 1) / nb;
 	}
 	return (SUCCESS);
 }

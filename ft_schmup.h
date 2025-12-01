@@ -2,12 +2,21 @@
 # define FT_SCHMUP_H
 
 # define WIN_WIDTH 3
-# define MAP_LIMIT LINES >> 1
+# define SUB_LINES (LINES - ((WIN_WIDTH - 1) << 1))
+# define SUB_COLS (COLS - ((WIN_WIDTH - 1) << 1))
+# define MAP_LIMIT (SUB_LINES >> 1)
 # define FPS_CAP 60
 # define PLAYER '^'
 # define ENEMY 'v'
 # define PLAYER_SHOT '*'
 # define ENEMY_SHOT '|'
+# define GREEN 1
+# define RED 2
+# define YELLOW 3
+# define MAGENTA 4
+# define WHITE 5
+# define BLUE 6
+# define CYAN 7
 
 #include <ncurses.h>
 #include <sys/time.h>

@@ -27,7 +27,7 @@ void	free_map(t_entity ****ptr_map)
 	int	i;
 
 	i = 0;
-	while (i < LINES && (*ptr_map)[i] != NULL)
+	while (i < SUB_LINES && (*ptr_map)[i] != NULL)
 	{
 		free((*ptr_map)[i]);
 		++i;

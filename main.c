@@ -11,6 +11,7 @@ int main(void)
 	int		input = 0;
 
 	ret = init_all(&game);
+	//game.fd = open("./log.txt", O_RDWR);
 	if (ret != SUCCESS)
 	return (ret);
 	curtime = game.info.t_zero;

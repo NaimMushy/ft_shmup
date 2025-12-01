@@ -41,13 +41,13 @@ static int	update_player(int input, t_game *game)
 
     switch (input)
 	{
-		case 'w' :
+		case 'z' :
 			check_collision(&game->player, game->player.row - 1, game->player.col, game);
 			break;
 		case 's' : 
 			check_collision(&game->player, game->player.row + 1, game->player.col, game);
 			break;
-		case 'a' :
+		case 'q' :
 			check_collision(&game->player, game->player.row, game->player.col - 1, game);
 			break;
 		case 'd' : 

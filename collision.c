@@ -47,7 +47,7 @@ static int	check_walls(int type, int row, int col)
 {
 	if (type == PLAYER && row <= MAP_LIMIT)
 		return (TRUE);
-	if (row <= WIN_WIDTH || row > LINES - WIN_WIDTH || col <= WIN_WIDTH || col > COLS - WIN_WIDTH)
+	if (row <= 0 || row >= SUB_LINES - 1 || col <= 0 || col >= SUB_COLS - 1)
 		return (TRUE);
 	return (FALSE);
 }
