@@ -66,7 +66,6 @@ typedef struct s_game
 	t_info			info;
 	struct timeval	frame_time;
 	int				f_counter;
-	int				fd;
 	t_entity		player;
 	t_entitylist	*enemies;
 	t_entitylist	*e_shots;
