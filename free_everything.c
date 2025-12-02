@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "ft_schmup.h"
+#include "ft_shmup.h"
 
 void	free_all(t_game game)
 {

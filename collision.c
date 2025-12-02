@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "ft_schmup.h"
+#include "ft_shmup.h"
 
 static t_entitylist	**set_type(t_entity *entity, t_game *game);
 static int			check_walls(int type, int row, int col);

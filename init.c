@@ -1,4 +1,4 @@
-#include "ft_schmup.h"
+#include "ft_shmup.h"
 #include <stdlib.h>
 
 static void	init_player(t_game *game, t_entity *player);
@@ -21,6 +21,7 @@ int	init_all(t_game *game)
 		init_pair(WHITE, COLOR_WHITE, COLOR_BLACK);
 		init_pair(BLUE, COLOR_BLUE, COLOR_BLACK);
 		init_pair(CYAN, COLOR_CYAN, COLOR_BLACK);
+		init_pair(BORDER, COLOR_WHITE, COLOR_WHITE);
 		clear();
 	}
 	curs_set(0);
@@ -55,7 +56,7 @@ static void	init_player(t_game *game, t_entity *player)
 	player->hp = 3;
 	player->app = PLAYER_UP;
 	player->type = PLAYER_T;
-	player->dir_r = 1;
+	player->dir_r = -1;
 	player->dir_c = 0;
 	game->map[player->row][player->col] = player;
 }

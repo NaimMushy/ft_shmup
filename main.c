@@ -1,4 +1,4 @@
-#include "ft_schmup.h"
+#include "ft_shmup.h"
 #include <ncurses.h>
 #include <unistd.h>
 #include <fcntl.h>
@@ -11,11 +11,17 @@ int main(void)
 	int		input = 0;
 
 	ret = init_all(&game);
-	game.fd = open("./log.txt", O_RDWR);
+	//game.fd = open("./log.txt", O_RDWR);
 	if (ret != SUCCESS)
-	return (ret);
+		return (ret);
 	curtime = game.info.t_zero;
-	while ((input = getch()) != KEY_F(1))
+	if (!start_menu())
+	{
+		free_all(game);
+		endwin();
+		return (SUCCESS);
+	}
+	while ((input = getch()) != 'e')
 	{
 		ret = gettimeofday(&game.frame_time, NULL);
 		if (ret != 0)
@@ -23,15 +29,21 @@ int main(void)
 			free_all(game);
 			break ;
 		}
+		if (input == 'p')
+		{
+			if (!pause_game(game.info, &curtime))
+			{
+				free_all(game);
+				break;
+			}
+		}
 		ret = update_all(input, &game);
-		dprintf(game.fd, "successfully updated\n");
 		if (ret != SUCCESS)
 		{
 			free_all(game);
 			break ;
 		}
 		ret = display_game(game, &curtime);
-		dprintf(game.fd, "successfully displayed\n");
 		if (ret != SUCCESS || game.player.hp == 0)
 		{
 			free_all(game);

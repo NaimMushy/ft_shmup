@@ -1,3 +1,3 @@
-.obj/init.o: init.c ft_schmup.h
+.obj/init.o: init.c ft_shmup.h
 
-ft_schmup.h:
+ft_shmup.h:

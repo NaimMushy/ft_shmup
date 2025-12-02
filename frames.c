@@ -1,5 +1,5 @@
 #include "unistd.h"
-#include "ft_schmup.h"
+#include "ft_shmup.h"
 
 void	wait_next_frame(struct timeval *ptr_frametime, struct timeval curtime)
 {

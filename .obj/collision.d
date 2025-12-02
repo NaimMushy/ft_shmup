@@ -1,3 +1,3 @@
-.obj/collision.o: collision.c ft_schmup.h
+.obj/collision.o: collision.c ft_shmup.h
 
-ft_schmup.h:
+ft_shmup.h:

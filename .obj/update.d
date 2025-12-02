@@ -1,3 +1,3 @@
-.obj/update.o: update.c ft_schmup.h
+.obj/update.o: update.c ft_shmup.h
 
-ft_schmup.h:
+ft_shmup.h:

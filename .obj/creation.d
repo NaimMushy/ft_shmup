@@ -1,3 +1,3 @@
-.obj/creation.o: creation.c ft_schmup.h
+.obj/creation.o: creation.c ft_shmup.h
 
-ft_schmup.h:
+ft_shmup.h:

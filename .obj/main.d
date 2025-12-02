@@ -1,3 +1,3 @@
-.obj/main.o: main.c ft_schmup.h
+.obj/main.o: main.c ft_shmup.h
 
-ft_schmup.h:
+ft_shmup.h:

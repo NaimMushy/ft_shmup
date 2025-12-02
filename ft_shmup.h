@@ -21,6 +21,7 @@
 # define WHITE 5
 # define BLUE 6
 # define CYAN 7
+# define BORDER 8
 
 #include <ncurses.h>
 #include <sys/time.h>
@@ -73,7 +74,7 @@ typedef struct s_game
 	t_info			info;
 	struct timeval	frame_time;
 	int				f_counter;
-	int				fd;
+	//int				fd;
 	t_entity		player;
 	t_entitylist	*enemies;
 	t_entitylist	*e_shots;
@@ -88,8 +89,8 @@ int		init_all(t_game *game);
 int	update_all(int input, t_game *game);
 
 //CREATION
-t_entitylist	*ft_lstnew(int c);
-int				add_new_wave(t_game *game, int number);
+t_entitylist	*ft_lstnew(int c, int dir_r, int dir_c);
+int				add_new_wave(t_game *game, int number, int dir_r, int dir_c);
 int				create_new_eshot(t_entitylist *enemies, t_entitylist **e_shots, t_game *game);
 void			ft_lstadd_front(t_entitylist **lst, t_entitylist *new);
 
@@ -97,8 +98,11 @@ void			ft_lstadd_front(t_entitylist **lst, t_entitylist *new);
 void	check_collision(t_entity *entity, int row, int col, t_game *game);
 
 //DISPLAY
-int		display_game(t_game game, struct timeval *ptr_curtime);
+int		display_game(t_game game, struct timeval *curtime);
+int		display_info(t_info info, struct timeval *curtime);
 void	game_over(t_game *game);
+int		pause_game(t_info info, struct timeval *curtime);
+int		start_menu(void);
 
 //FRAME TIME
 void	wait_next_frame(struct timeval *ptr_frametime, struct timeval curtime);

@@ -1,3 +1,3 @@
-.obj/frames.o: frames.c ft_schmup.h
+.obj/frames.o: frames.c ft_shmup.h
 
-ft_schmup.h:
+ft_shmup.h:

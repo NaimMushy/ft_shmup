@@ -1,4 +1,4 @@
-#include "ft_schmup.h"
+#include "ft_shmup.h"
 #include <stdlib.h>
 
 int	create_new_eshot(t_entitylist *enemies, t_entitylist **e_shots, t_game *game)
@@ -9,11 +9,11 @@ int	create_new_eshot(t_entitylist *enemies, t_entitylist **e_shots, t_game *game
 	cursor = enemies;
 	while (cursor)
 	{
-		new_shot = ft_lstnew(ENEMY_SHOT);
+		new_shot = ft_lstnew(ENEMY_SHOT, enemies->data.dir_r, enemies->data.dir_c);
 		if (new_shot == NULL)
 			return (ERROR_ALLOC);
 		ft_lstadd_front(e_shots, new_shot);
-		check_collision(&new_shot->data, cursor->data.row + cursor->data.dir_r, cursor->data.col + cursor->data.dir_c, game);
+		check_collision(&new_shot->data, cursor->data.row + new_shot->data.dir_r, cursor->data.col + new_shot->data.dir_c, game);
 		cursor = cursor->next;
 	}
 	return (SUCCESS);
@@ -39,7 +39,7 @@ static int get_free_col(int start, t_entitylist *enemies)
 	return (final);
 }
 
-int	add_new_wave(t_game *game, int number)
+int	add_new_wave(t_game *game, int number, int dir_r, int dir_c)
 {
 	t_entitylist	*new_enemy;
 	int	pos;
@@ -49,7 +49,7 @@ int	add_new_wave(t_game *game, int number)
 	pos = (SUB_COLS - 1) / (number << 1);
 	while (number--)
 	{
-		new_enemy = ft_lstnew(ENEMY);
+		new_enemy = ft_lstnew(ENEMY, dir_r, dir_c);
 		if (new_enemy == NULL)
 			return (ERROR_ALLOC);
 		pos = get_free_col(pos, game->enemies);
@@ -59,13 +59,13 @@ int	add_new_wave(t_game *game, int number)
 			return (SUCCESS);
 		}
 		ft_lstadd_front(&game->enemies, new_enemy);
-		check_collision(&new_enemy->data, 1, pos, game);
+		check_collision(&new_enemy->data, 1, pos + dir_c, game);
 		pos += (SUB_COLS - 1) / nb;
 	}
 	return (SUCCESS);
 }
 
-t_entitylist	*ft_lstnew(int c)
+t_entitylist	*ft_lstnew(int c, int dir_r, int dir_c)
 {
 	t_entitylist	*new;
 
@@ -77,8 +77,8 @@ t_entitylist	*ft_lstnew(int c)
 	new->data.app = c;
 	new->data.type = c;
 	new->data.hp = 1;
-	new->data.dir_r = 1;
-	new->data.dir_c = 0;
+	new->data.dir_r = dir_r;
+	new->data.dir_c = dir_c;
 	new->next = NULL;
 	return (new);
 }
