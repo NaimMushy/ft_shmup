@@ -2,19 +2,19 @@
 #include <stdlib.h>
 
 static int	update_player(int input, t_game *game);
-static void	update_entities(t_entitylist *entities, int move, t_game *game);
+static void	update_entities(t_entitylist *entities, int move_r, int move_c, t_game *game);
 
 int	update_all(int input, t_game *game)
 {
 	int	ret;
 	
-	update_entities(game->p_shots, -1, game);
 	ret = update_player(input, game);
+	update_entities(game->p_shots, game->player.dir_r, game->player.dir_c, game);
 	if (ret != SUCCESS)
 		return (ret);
-	update_entities(game->e_shots, 1, game);
+	update_entities(game->e_shots, game->enemies.data.dir_r, game->enemies.data.dir_c, game);
 	if (game->f_counter % FPS_CAP == 0)
-		update_entities(game->enemies, 1, game);
+		update_entities(game->enemies, 1, 0, game);
 	if (game->f_counter % FPS_CAP == 0)
 	{
 		ret = create_new_eshot(game->enemies, &game->e_shots, game);
@@ -35,6 +35,14 @@ int	update_all(int input, t_game *game)
 	return (SUCCESS);
 }
 
+static void	set_pos(t_game *game, char appearance, int move_r, int move_c)
+{
+	if (game->player.ch == appearance)
+		check_collision(&game->player, player->row + move_r, player->col + move_c, game);
+	else
+		player.ch = appearance;
+}
+
 static int	update_player(int input, t_game *game)
 {
 	t_entitylist	*new_shot;
@@ -42,6 +50,7 @@ static int	update_player(int input, t_game *game)
     switch (input)
 	{
 		case 'z' :
+			set_pos(&game->player, PLAYER_UP, -1, 0);
 			check_collision(&game->player, game->player.row - 1, game->player.col, game);
 			break;
 		case 's' : 

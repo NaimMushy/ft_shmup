@@ -6,7 +6,10 @@
 # define SUB_COLS (COLS - ((WIN_WIDTH - 1) << 1))
 # define MAP_LIMIT (SUB_LINES >> 1)
 # define FPS_CAP 60
-# define PLAYER '^'
+# define PLAYER_UP '^'
+# define PLAYER_DOWN 'v'
+# define PLAYER_LEFT '<'
+# define PLAYER_RIGHT '>'
 # define ENEMY 'v'
 # define PLAYER_SHOT '*'
 # define ENEMY_SHOT '|'
@@ -35,6 +38,8 @@ typedef struct s_entity
 	int hp;
 	int row;
 	int col;
+	int dir_row;
+	int dir_col;
 }   t_entity;
 
 typedef struct s_entitylist
