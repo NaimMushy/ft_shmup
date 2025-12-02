@@ -53,7 +53,10 @@ static void	init_player(t_game *game, t_entity *player)
 	player->col = (SUB_COLS - 1) >> 1;
 	//dprintf(game->fd, "player row at init : %d\nplayer col at init : %d\n", player->row, player->col);
 	player->hp = 3;
-	player->ch = PLAYER;
+	player->app = PLAYER_UP;
+	player->type = PLAYER_T;
+	player->dir_r = 1;
+	player->dir_c = 0;
 	game->map[player->row][player->col] = player;
 }
 

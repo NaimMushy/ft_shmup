@@ -13,7 +13,7 @@ int	create_new_eshot(t_entitylist *enemies, t_entitylist **e_shots, t_game *game
 		if (new_shot == NULL)
 			return (ERROR_ALLOC);
 		ft_lstadd_front(e_shots, new_shot);
-		check_collision(&new_shot->data, cursor->data.row + 1, cursor->data.col, game);
+		check_collision(&new_shot->data, cursor->data.row + cursor->data.dir_r, cursor->data.col + cursor->data.dir_c, game);
 		cursor = cursor->next;
 	}
 	return (SUCCESS);
@@ -74,8 +74,11 @@ t_entitylist	*ft_lstnew(int c)
 		return (NULL);
 	new->data.row = 0;
 	new->data.col = 0;
-	new->data.ch = c;
+	new->data.app = c;
+	new->data.type = c;
 	new->data.hp = 1;
+	new->data.dir_r = 1;
+	new->data.dir_c = 0;
 	new->next = NULL;
 	return (new);
 }

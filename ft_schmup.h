@@ -6,13 +6,14 @@
 # define SUB_COLS (COLS - ((WIN_WIDTH - 1) << 1))
 # define MAP_LIMIT (SUB_LINES >> 1)
 # define FPS_CAP 60
+# define PLAYER_T 'p'
 # define PLAYER_UP '^'
 # define PLAYER_DOWN 'v'
 # define PLAYER_LEFT '<'
 # define PLAYER_RIGHT '>'
-# define ENEMY 'v'
+# define ENEMY 'W'
 # define PLAYER_SHOT '*'
-# define ENEMY_SHOT '|'
+# define ENEMY_SHOT 'o'
 # define GREEN 1
 # define RED 2
 # define YELLOW 3
@@ -34,12 +35,13 @@ enum ret_val
 
 typedef struct s_entity
 {
-	char ch;
+	char app;
+	char type;
 	int hp;
 	int row;
 	int col;
-	int dir_row;
-	int dir_col;
+	int dir_r;
+	int dir_c;
 }   t_entity;
 
 typedef struct s_entitylist
