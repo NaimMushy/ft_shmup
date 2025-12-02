@@ -1,0 +1,1613 @@
+updated player
+entities elem is null
+updated player shots
+entities elem is null
+updated enemies
+created new e shots
+added a new enemy wave
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+created new e shots
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+created new e shots
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+entities elem is null
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+created new e shots
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed
+updated player
+entities elem is null
+updated player shots
+updated enemies
+updated enemy shots
+successfully updated
+successfully displayed

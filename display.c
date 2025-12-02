@@ -11,11 +11,11 @@ int	display_game(t_game game, struct timeval *ptr_curtime)
 	if (werase(game.win) == ERR)
 		return (ERROR_NCURSES);
 	wattron(game.win, COLOR_PAIR(CYAN));
-	if (wborder(game.win, '|', '|', '=', '=', '/', '\\', '\\', '/'))
+	if (wborder(game.win, '|', '|', ' ', ' ', ' ', ' ', ' ', ' '))
 		return (ERROR_NCURSES);
 	wattroff(game.win, COLOR_PAIR(CYAN));
 	wattron(game.win, COLOR_PAIR(GREEN));
-	if (mvwaddch(game.win, game.player.row, game.player.col, game.player.ch) == ERR)
+	if (mvwaddch(game.win, game.player.row, game.player.col, game.player.app) == ERR)
 		return (ERROR_NCURSES);
 	wattroff(game.win, COLOR_PAIR(GREEN));
 	ret = ft_lstiter_display(game.enemies, &game, RED);
@@ -38,7 +38,7 @@ static int	ft_lstiter_display(t_entitylist *lst, t_game *game, int c_pair)
 	wattron(game->win, COLOR_PAIR(c_pair));
 	while (lst)
 	{
-		if (mvwaddch(game->win, lst->data.row, lst->data.col, lst->data.ch) == ERR)
+		if (mvwaddch(game->win, lst->data.row, lst->data.col, lst->data.app) == ERR)
 		{
 			wattroff(game->win, COLOR_PAIR(c_pair));
 			return (ERROR_NCURSES);

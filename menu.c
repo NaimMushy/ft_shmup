@@ -14,7 +14,7 @@ void	game_over(t_game *game)
 	range = (b_lines / 3 + 1) >> 1;
 	game->win = subwin(stdscr, b_lines, b_cols, LINES / 3, b_cols >> 1);
 	wattron(game->win, COLOR_PAIR(MAGENTA));
-	wborder(game->win, '|', '|', '=', '=', '/', '\\', '\\', '/');
+	wborder(game->win, '|', '|', ' ', ' ', ' ', ' ', ' ', ' ');
 	txt_line = range;
 	txt_col = (b_cols - strlen("---- GAME OVER ----")) >> 1;
 	wattron(game->win, COLOR_PAIR(RED));

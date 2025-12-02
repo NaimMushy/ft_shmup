@@ -11,7 +11,7 @@ int main(void)
 	int		input = 0;
 
 	ret = init_all(&game);
-	//game.fd = open("./log.txt", O_RDWR);
+	game.fd = open("./log.txt", O_RDWR);
 	if (ret != SUCCESS)
 	return (ret);
 	curtime = game.info.t_zero;
@@ -24,12 +24,14 @@ int main(void)
 			break ;
 		}
 		ret = update_all(input, &game);
+		dprintf(game.fd, "successfully updated\n");
 		if (ret != SUCCESS)
 		{
 			free_all(game);
 			break ;
 		}
 		ret = display_game(game, &curtime);
+		dprintf(game.fd, "successfully displayed\n");
 		if (ret != SUCCESS || game.player.hp == 0)
 		{
 			free_all(game);

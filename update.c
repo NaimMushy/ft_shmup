@@ -9,15 +9,18 @@ int	update_all(int input, t_game *game)
 	int	ret;
 	
 	ret = update_player(input, game);
+	dprintf(game->fd, "updated player\n");
 	update_entities(game->p_shots, game->player.dir_r, game->player.dir_c, game);
+	dprintf(game->fd, "updated player shots\n");
 	if (ret != SUCCESS)
 		return (ret);
-	update_entities(game->e_shots, game->enemies->data.dir_r, game->enemies->data.dir_c, game);
 	if (game->f_counter % FPS_CAP == 0)
-		update_entities(game->enemies, game->enemies->data.dir_r, game->enemies->data.dir_c, game);
+		update_entities(game->enemies, 1, 0, game);
+	dprintf(game->fd, "updated enemies\n");
 	if (game->f_counter % FPS_CAP == 0)
 	{
 		ret = create_new_eshot(game->enemies, &game->e_shots, game);
+		dprintf(game->fd, "created new e shots\n");
 		if (ret != SUCCESS)
 			return (ret);
 	}
@@ -29,9 +32,12 @@ int	update_all(int input, t_game *game)
 			game->spawn.ppk += 25;
 		}
 		ret = add_new_wave(game, game->spawn.wave_size);
+		dprintf(game->fd, "added a new enemy wave\n");
 		if (ret != SUCCESS)
 			return (ret);
 	}
+	update_entities(game->e_shots, 1, 0, game);
+	dprintf(game->fd, "updated enemy shots\n");
 	return (SUCCESS);
 }
 
@@ -83,4 +89,6 @@ static void	update_entities(t_entitylist *entities, int move_r, int move_c, t_ga
 			update_entities(entities->next, move_r, move_c, game);
 		check_collision(&entities->data, entities->data.row + move_r, entities->data.col + move_c, game);
 	}
+	else
+		dprintf(game->fd, "entities elem is null\n");
 }
